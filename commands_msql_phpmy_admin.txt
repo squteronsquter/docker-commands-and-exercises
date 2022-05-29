@@ -1,4 +1,4 @@
-# COMMANDS TO CREATE NETWORK AND STRAT MYSQL CONTAINERS WITH PHPMYADMIN ON THE SAME NETWORK FOR CONNECTIVITY
+# COMMANDS TO CREATE NETWORK AND START MYSQL AND PHPMYADMIN CONTAINERS ON THE SAME NETWORK FOR CONNECTIVITY
 
 ## EXAMPLE ONE
 
@@ -48,13 +48,13 @@ docker run \
   --name phpmyadmin \
   -d phpmyadmin/phpmyadmin
 
-## CHECK IF THE CONTAINER HAVE BEEN CREATED AND ARE ON THE SAME NETWORK
+## CHECK IF THE CONTAINERS HAVE BEEN CREATED AND ARE ON THE SAME NETWORK
 
 docker ps
 
 docker network inspect mysql
 
-### If yoy see something like this:
+### IF YOU SEE SOMETHING LIKE THIS:
 
 "Containers": {
             "94c87fd3759fa5a305d6f29028bbfafc950c12e7bd7a35ca93da3723900dcc18": {
@@ -72,10 +72,9 @@ docker network inspect mysql
                 "IPv6Address": ""
             }
         },
-### and are able to log into the PHPMyAdmin panel on localhost:8080
+### AND ARE ABLE TO LOG INTO PHPMyAdmin PANEL ON: http://localhost:8080
 
-### Then you job is done - you have successfully created two containers on the same custom network and connected them so that they can talk to one another
-
-## ALL WORKED FINE IN MY CASE AND I AM ABLE TO USE PHPMYADMIN 
+### THEN YOUR JOB IS DONE - YOU HAVE SUCCESSFULLY CREATED TWO CONTAINERS ON THE SAME CUSTOM NETWORK AND MAKE THEM TALK TO EACH OTHER
+## ALL WORKED FINE IN MY CASE AND I AM ABLE TO USE PHPMYADMIN AND CREATE A NEW DATABASE
 
 
